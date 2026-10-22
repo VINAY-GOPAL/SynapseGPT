@@ -20,7 +20,7 @@ from tools import tools
 Path("data").mkdir(exist_ok=True)
 
 
-# Update default and allowed models to use Gemini 2.5
+# Update default and allowed models to use Gemini 3.8
 DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 ALLOWED_MODELS = {
