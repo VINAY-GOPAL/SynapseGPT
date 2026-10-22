@@ -283,16 +283,24 @@ Settings → Actions → Runners → New self-hosted runner
 
 Select Linux and follow the commands shown by GitHub.
 
-After setup, start the runner:
+For a temporary foreground runner, start it with:
 
 ```bash
 ./run.sh
 ```
 
-For production, you can configure the runner as a service:
+For a persistent runner, install and start it as a service instead:
 
 ```bash
 sudo ./svc.sh install
+sudo ./svc.sh start
+```
+
+Run the runner in only one mode at a time. If the service is running, do not also start `./run.sh`; that creates a duplicate session. Check or manage the service with:
+
+```bash
+sudo ./svc.sh status
+sudo ./svc.sh stop
 sudo ./svc.sh start
 ```
 
